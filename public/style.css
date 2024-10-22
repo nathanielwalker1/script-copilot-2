@@ -411,26 +411,46 @@ li {
         flex-direction: column;
         gap: 15px;
         width: 100%;
-        max-width: 100%; /* Ensure the form doesn't exceed the container width */
     }
 
     .create-script-page input[type="text"] {
         width: 100%;
-        max-width: 100%; /* Ensure the input doesn't exceed the form width */
-        padding: 12px 15px;
+        padding: 15px;
         border-radius: 8px;
-        font-size: 16px;
+        font-size: 14px;
         background-color: #1E1E1E;
         border: 1px solid #333;
-        display: block;
-        box-sizing: border-box; /* Include padding and border in the element's total width */
+        box-sizing: border-box;
+        height: auto;
+        min-height: 120px; /* Increased minimum height */
+        line-height: 1.4;
+        resize: vertical;
+        vertical-align: top; /* Align text to the top */
+    }
+
+    .create-script-page input[type="text"]::placeholder {
+        font-size: 14px;
+        line-height: 1.4;
+        color: #999;
+        opacity: 1;
+        position: absolute; /* Position the placeholder */
+        top: 15px; /* Align with the top padding */
+        left: 15px; /* Align with the left padding */
+        white-space: normal; /* Allow text to wrap */
+        overflow: hidden; /* Hide overflow */
+        text-overflow: ellipsis; /* Add ellipsis for overflow */
+        max-width: calc(100% - 30px); /* Account for padding */
     }
 
     .create-script-page .primary-button[type="submit"] {
         width: 100%;
-        padding: 12px 24px;
+        padding: 15px;
         font-size: 16px;
         border-radius: 8px;
+    }
+
+    .create-script-page .loading-spinner {
+        margin-top: 20px;
     }
 }
 
@@ -606,3 +626,4 @@ li {
     font-weight: 500;
     line-height: 1.4;
 }
+
