@@ -550,3 +550,41 @@ li {
 .logo-link:hover {
     text-decoration: none;
 }
+
+.loading-spinner {
+    border: 4px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top: 4px solid #fff;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto 0; /* Add margin to position it below the form */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.hidden {
+    display: none;
+}
+
+/* Adjust the create-script-page styles */
+@media (max-width: 768px) {
+    .create-script-page {
+        /* ... (keep existing styles) ... */
+    }
+
+    .create-script-page #product-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .create-script-page .loading-spinner {
+        margin-top: 20px; /* Add space between the form and the spinner */
+    }
+}

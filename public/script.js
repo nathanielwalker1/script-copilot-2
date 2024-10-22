@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const reviewExistingScriptBtn = document.querySelector('.secondary-button');
     const productForm = document.getElementById('product-form');
     const resubmitBtn = document.getElementById('resubmit-btn');
+    const loadingSpinner = document.getElementById('loading-spinner');
 
     if (createNewScriptBtn) {
         createNewScriptBtn.addEventListener('click', () => {
@@ -21,8 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
     if (productForm) {
         productForm.addEventListener('submit', async (e) => {
             e.preventDefault();
+            loadingSpinner.classList.remove('hidden');
             const productLink = document.getElementById('product-link').value;
             const analysis = await fetchProductAnalysis(productLink);
+            loadingSpinner.classList.add('hidden');
             if (analysis) {
                 // Store the analysis in localStorage for the results page
                 localStorage.setItem('productAnalysis', JSON.stringify(analysis));
