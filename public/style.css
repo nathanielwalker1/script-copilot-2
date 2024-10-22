@@ -1,0 +1,216 @@
+body {
+    font-family: 'Clash Display', sans-serif;
+    background-color: #000000;
+    color: #FFFFFF;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 20px 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+main {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    text-align: left;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    align-self: flex-start;
+}
+
+#product-form {
+    display: flex;
+    gap: 20px;
+    width: 100%;
+}
+
+input[type="text"] {
+    flex-grow: 1;
+    font-family: 'Clash Display', sans-serif;
+    font-size: 16px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    border: none;
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+input[type="text"]::placeholder {
+    color: #999999;
+}
+
+button {
+    font-family: 'Clash Display', sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 12px 24px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border: none;
+}
+
+.primary-button {
+    background-color: #1400FF;
+    color: #FFFFFF;
+}
+
+.primary-button:hover {
+    background-color: #1100CC;
+}
+
+.secondary-button {
+    background-color: #333333;
+    color: #FFFFFF;
+}
+
+.secondary-button:hover {
+    background-color: #444444;
+}
+
+/* Styles for the front page */
+.front-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+.front-page .container {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.front-page h1 {
+    margin-bottom: 20px;
+}
+
+.front-page p {
+    font-size: 18px;
+    line-height: 1.5;
+    margin-bottom: 40px;
+    max-width: 600px;
+}
+
+.front-page .button-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Add these styles to your existing style.css file */
+
+.results-page .container {
+    max-width: 1200px;
+}
+
+.results-container {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 40px;
+}
+
+.result-column {
+    flex: 1;
+}
+
+section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    font-size: 36px;
+    font-weight: 500;
+    margin-bottom: 30px;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: 500; /* Changed from 500 to 600 for medium weight */
+    margin-bottom: 15px;
+    color: #FFFFFF;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin-bottom: 10px;
+    color: #BDBDBD;
+}
+
+.input-container {
+    display: flex;
+    gap: 20px;
+    margin-top: 40px;
+}
+
+#product-link {
+    flex-grow: 1;
+    background-color: #333333;
+    color: #999999;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-family: 'Clash Display', sans-serif;
+    font-size: 16px;
+}
+
+#resubmit-btn {
+    white-space: nowrap;
+}
+
+#positive-feedback h3 {
+    color: #6DDF9C;
+}
+
+#negative-feedback h3 {
+    color: #DE6F6F;
+}
