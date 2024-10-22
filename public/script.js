@@ -4,15 +4,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const productForm = document.getElementById('product-form');
     const resubmitBtn = document.getElementById('resubmit-btn');
 
-    createNewScriptBtn.addEventListener('click', () => {
-        window.location.href = 'createnewscript.html';
-    });
+    if (createNewScriptBtn) {
+        createNewScriptBtn.addEventListener('click', () => {
+            window.location.href = 'createnewscript.html';
+        });
+    }
 
-    reviewExistingScriptBtn.addEventListener('click', () => {
-        // Navigate to the Review Existing Script page
-        console.log('Navigate to Review Existing Script page');
-        // Implement navigation logic here
-    });
+    if (reviewExistingScriptBtn) {
+        reviewExistingScriptBtn.addEventListener('click', () => {
+            // Navigate to the Review Existing Script page
+            console.log('Navigate to Review Existing Script page');
+            // Implement navigation logic here
+        });
+    }
 
     if (productForm) {
         productForm.addEventListener('submit', async (e) => {

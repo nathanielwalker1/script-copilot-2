@@ -146,17 +146,19 @@ button {
 /* Add these styles to your existing style.css file */
 
 .results-page .container {
-    max-width: 1200px;
+    max-width: 1200px; /* Increase the maximum width of the container */
+    padding: 20px;
 }
 
 .results-container {
     display: flex;
     gap: 40px;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
 }
 
 .result-column {
     flex: 1;
+    max-width: 100%; /* Allow columns to take full width */
 }
 
 section {
@@ -164,26 +166,26 @@ section {
 }
 
 h2 {
-    font-size: 36px;
-    font-weight: 500;
-    margin-bottom: 30px;
+    font-size: 32px;
+    margin-bottom: 25px;
 }
 
 h3 {
     font-size: 24px;
-    font-weight: 500; /* Changed from 500 to 600 for medium weight */
     margin-bottom: 15px;
-    color: #FFFFFF;
 }
 
 ul {
-    list-style-type: none;
-    padding: 0;
+    padding-left: 25px;
+    list-style-position: outside; /* Ensure bullet points are outside the text */
 }
 
 li {
-    margin-bottom: 10px;
-    color: #BDBDBD;
+    margin-bottom: 12px;
+    line-height: 1.6;
+    font-size: 16px;
+    word-wrap: break-word;
+    max-width: 100%; /* Allow list items to take full width */
 }
 
 .input-container {
@@ -213,4 +215,338 @@ li {
 
 #negative-feedback h3 {
     color: #DE6F6F;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+
+    .container {
+        padding: 0;
+    }
+
+    header {
+        position: sticky;
+        top: 0;
+        background-color: #000000;
+        z-index: 1000;
+        padding: 15px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo h1 {
+        font-size: 24px;
+    }
+
+    nav {
+        display: none; /* Hide navigation buttons on mobile */
+    }
+
+    main {
+        padding: 15px;
+    }
+
+    h2 {
+        font-size: 20px;
+        margin-bottom: 15px;
+    }
+
+    h3 {
+        font-size: 16px;
+        margin-bottom: 10px;
+    }
+
+    .results-container {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    .result-column {
+        width: 100%;
+    }
+
+    section {
+        margin-bottom: 20px;
+    }
+
+    ul {
+        padding-left: 20px;
+    }
+
+    li {
+        margin-bottom: 10px;
+        font-size: 15px;
+    }
+
+    .input-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        padding: 15px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+    }
+
+    #product-link {
+        flex-grow: 1;
+        background-color: #333333;
+        color: #999999;
+        border: none;
+        padding: 12px 20px;
+        border-radius: 8px;
+        font-family: 'Clash Display', sans-serif;
+        font-size: 16px;
+    }
+
+    #resubmit-btn {
+        width: 100%;
+        background-color: #1400FF;
+        color: #FFFFFF;
+        font-size: 16px;
+        padding: 12px 0;
+        border-radius: 8px;
+    }
+}
+
+/* Additional styles for better mobile experience */
+@media (max-width: 768px) {
+    .results-page {
+        padding-bottom: 70px; /* Add padding to account for fixed Re-submit button */
+    }
+
+    #positive-feedback h3,
+    #negative-feedback h3 {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+
+    #positive-feedback h3 {
+        background-color: rgba(109, 223, 156, 0.1);
+    }
+
+    #negative-feedback h3 {
+        background-color: rgba(222, 111, 111, 0.1);
+    }
+}
+
+/* Additional responsive adjustments for very small screens */
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 28px;
+    }
+
+    h2 {
+        font-size: 22px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    input[type="text"], button {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+}
+
+/* Improve touch targets for mobile */
+@media (hover: none) and (pointer: coarse) {
+    button, input[type="text"] {
+        min-height: 44px;
+    }
+
+    li {
+        padding: 8px 0;
+    }
+}
+
+/* Styles for createnewscript.html */
+@media (max-width: 768px) {
+    .create-script-page {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .create-script-page .container {
+        padding: 15px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        flex-grow: 1;
+    }
+
+    .create-script-page header {
+        justify-content: space-between;
+        padding: 0;
+        margin-bottom: 40px;
+    }
+
+    .create-script-page .logo h1 {
+        font-size: 24px;
+    }
+
+    .create-script-page nav {
+        display: block;
+    }
+
+    .create-script-page nav .primary-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .create-script-page h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .create-script-page #product-form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        max-width: 100%; /* Ensure the form doesn't exceed the container width */
+    }
+
+    .create-script-page input[type="text"] {
+        width: 100%;
+        max-width: 100%; /* Ensure the input doesn't exceed the form width */
+        padding: 12px 15px;
+        border-radius: 8px;
+        font-size: 16px;
+        background-color: #1E1E1E;
+        border: 1px solid #333;
+        display: block;
+        box-sizing: border-box; /* Include padding and border in the element's total width */
+    }
+
+    .create-script-page .primary-button[type="submit"] {
+        width: 100%;
+        padding: 12px 24px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+}
+
+/* Remove or comment out this part if it exists in your CSS */
+/*
+@media (max-width: 768px) {
+    #product-link {
+        display: none;
+    }
+}
+*/
+
+/* Responsive styles for displayresults.html */
+@media (max-width: 768px) {
+    .results-page {
+        padding-bottom: 70px; /* Add padding to account for fixed Re-submit button */
+    }
+
+    .results-page .container {
+        padding: 15px;
+    }
+
+    .results-page header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .results-page nav {
+        display: block; /* Show navigation on mobile for results page */
+    }
+
+    .results-page nav .primary-button {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
+
+    .results-page h2 {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+
+    .results-page .results-container {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .results-page .result-column {
+        width: 100%;
+    }
+
+    .results-page section {
+        margin-bottom: 30px;
+    }
+
+    .results-page h3 {
+        font-size: 18px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .results-page ul {
+        padding-left: 20px;
+    }
+
+    .results-page li {
+        margin-bottom: 8px;
+        font-size: 14px;
+        line-height: 1.4;
+    }
+
+    .results-page #positive-feedback h3,
+    .results-page #negative-feedback h3 {
+        display: inline-block;
+        padding: 5px 10px;
+        border-radius: 4px;
+    }
+
+    .results-page #positive-feedback h3 {
+        background-color: rgba(109, 223, 156, 0.1);
+    }
+
+    .results-page #negative-feedback h3 {
+        background-color: rgba(222, 111, 111, 0.1);
+    }
+
+    .results-page .input-container {
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background-color: #000000;
+        padding: 15px;
+        box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+        margin-top: 0;
+    }
+
+    .results-page #product-link {
+        display: none; /* Hide the input field on mobile */
+    }
+
+    .results-page #resubmit-btn {
+        width: 100%;
+        background-color: #1400FF;
+        color: #FFFFFF;
+        font-size: 16px;
+        padding: 12px 0;
+        border-radius: 8px;
+    }
+}
+
+.logo-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.logo-link:hover {
+    text-decoration: none;
 }
