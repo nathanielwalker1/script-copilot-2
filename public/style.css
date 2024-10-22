@@ -124,16 +124,17 @@ button {
     justify-content: center;
     align-items: center;
     text-align: center;
+    padding: 20px;
 }
 
 .front-page h1 {
-    margin-bottom: 20px;
+    margin-bottom: 15px; /* Reduced from 20px to 15px */
 }
 
 .front-page p {
     font-size: 18px;
     line-height: 1.5;
-    margin-bottom: 40px;
+    margin-bottom: 30px; /* Reduced from 40px to 30px */
     max-width: 600px;
 }
 
@@ -141,6 +142,22 @@ button {
     display: flex;
     justify-content: center;
     gap: 20px;
+}
+
+/* Responsive styles for front page */
+@media (max-width: 768px) {
+    .front-page .container {
+        padding: 20px 30px;
+    }
+
+    .front-page h1 {
+        margin-bottom: 10px; /* Further reduced for mobile */
+    }
+
+    .front-page p {
+        font-size: 16px;
+        margin-bottom: 25px; /* Adjusted for mobile */
+    }
 }
 
 /* Add these styles to your existing style.css file */
