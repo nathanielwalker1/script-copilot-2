@@ -78,4 +78,12 @@ function populateResults(data) {
     document.getElementById('positive-list').innerHTML = data.customerFeedback.positives.map(item => `<li>${item}</li>`).join('');
     document.getElementById('negative-list').innerHTML = data.customerFeedback.concerns.map(item => `<li>${item}</li>`).join('');
     document.getElementById('talking-points-list').innerHTML = data.keyTalkingPoints.map(item => `<li>${item}</li>`).join('');
+    
+    if (data.suggestedCaption) {
+        document.getElementById('caption-text').textContent = data.suggestedCaption;
+    } else {
+        document.getElementById('caption-text').textContent = "No suggested caption available.";
+    }
+    
+    console.log("Suggested Caption:", data.suggestedCaption);  // Add this line for debugging
 }

@@ -588,3 +588,21 @@ li {
         margin-top: 20px; /* Add space between the form and the spinner */
     }
 }
+
+#suggested-caption {
+    margin-bottom: 30px;
+    background-color: rgba(20, 0, 255, 0.1);
+    padding: 15px;
+    border-radius: 8px;
+}
+
+#suggested-caption h3 {
+    color: #1400FF;
+    margin-bottom: 10px;
+}
+
+#caption-text {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 1.4;
+}

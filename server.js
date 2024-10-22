@@ -24,7 +24,7 @@ const openai = new OpenAI({
 app.post('/analyze-product', async (req, res) => {
     try {
         const { productLink } = req.body;
-        const prompt = `You are a helpful assistant for Amazon Influencers. Given an Amazon product listing, analyze and structure the information into the following format:
+        const prompt = `You are a helpful assistant for Amazon Influencers. Your goal is to create punchy talking points that can convert to sales, checked against Amazon guidelines. Given an Amazon product listing, analyze and structure the information into the following format:
 
 ### 1. Product Overview:
 - List core specifications and basic product identifiers
@@ -47,6 +47,9 @@ app.post('/analyze-product', async (req, res) => {
 - Value proposition
 - Things to say or not say in regards to Amazon guidelines
 
+### 5. Suggested Caption:
+Create a short, attention-grabbing caption for a video review of this product. Use phrases that begin like this or other similar ones: "This is a must-have for...", "I've been using this for...", "I love this because...", "You must watch this before...", "I'm so glad I got this...", "I've never used anything...", "Does it actually work?", "What's inside...", "I'll show you how to..." It should encourage viewers to click on the video. Keep it under 10 words. Use simple words and phrases, don't sound overly salesy. No hashtags.
+
 After providing the analysis in the above format, please also provide a JSON structure with the same information, especially ensuring that the customer feedback section in the JSON matches the bullet points in the markdown format. The JSON structure should look like this:
 
 {
@@ -56,10 +59,11 @@ After providing the analysis in the above format, please also provide a JSON str
     "positives": ["positive1", "positive2", ...],
     "concerns": ["concern1", "concern2", ...]
   },
-  "keyTalkingPoints": ["point1", "point2", ...]
+  "keyTalkingPoints": ["point1", "point2", ...],
+  "suggestedCaption": "Your suggested caption here"
 }
 
-Ensure that the content in both the markdown and JSON formats is identical, especially for the customer feedback section.
+Ensure that the content in both the markdown and JSON formats is identical, especially for the customer feedback section and suggested caption.
 
 Analyze this product: ${productLink}`;
 
@@ -107,6 +111,10 @@ function parseAnalysis(analysis) {
     
     const keyTalkingPoints = sections.find(s => s.toLowerCase().includes('4. key talking points'))?.split('\n').slice(1).map(item => item.replace(/^-\s*/, '').trim()).filter(Boolean) || [];
 
+    const suggestedCaption = sections.find(s => s.toLowerCase().includes('5. suggested caption'))?.split('\n')[1]?.trim() || '';
+    
+    console.log("Suggested Caption:", suggestedCaption);  // Add this line
+
     return {
         productOverview,
         keyFeatures,
@@ -115,6 +123,7 @@ function parseAnalysis(analysis) {
             concerns: concerns.length > 0 ? concerns : ['No concerns available'],
         },
         keyTalkingPoints,
+        suggestedCaption,
     };
 }
 
